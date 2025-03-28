@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Anuncio Publicitario - Aromas y Tendencias</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Calibri', sans-serif;
+      background: url('file:///C:/Users/danie/OneDrive/Documentos/html/fondo.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      color: #333;
+      position: relative;
+    }
+    
+    /* Efecto de niebla */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
+    .container {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 230, 230, 0.8));
+      padding: 40px 20px;
+      margin: 50px auto;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+      font-size: 32px;
+      color: #D50000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.5);
+    }
+    
+    .products {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 400px;
+      text-align: left;
+    }
+    
+    .products li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 12px 20px;
+      border-left: 5px solid #D50000;
+      color: #000;
+      font-size: 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .products li i {
+      color: #D50000;
+      margin-right: 10px;
+    }
+    
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #D50000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+    }
+    
+    .btn:hover {
+      background: #B00000;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    }
+
+    .contact a {
+      color: #D50000;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.3s, transform 0.2s;
+    }
+    
+    .contact a:hover {
+      color: #B00000;
+      animation: vibrar 0.2s infinite alternate;
+    }
+
+    @keyframes vibrar {
+      0% { transform: translateX(-2px); }
+      100% { transform: translateX(2px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nuevas Fragancias</h1>
+    <p>Descubre tu aroma que te hace único, en nuestras tiendas</p>
+    <h2>¡Ahora en Aromas y Tendencias Tegucigalpa!</h2>
+    <ul class="products">
+      <li><i class="fas fa-spray-can"></i>Ultra Male - Jean Paul Gaultier</li>
+      <li><i class="fas fa-spray-can"></i>Bright Crystal - Versace</li>
+      <li><i class="fas fa-spray-can"></i>Can Can - Paris Hilton</li>
+      <li><i class="fas fa-spray-can"></i>Club de Nuit Intense - Armaf</li>
+      <li><i class="fas fa-spray-can"></i>Club de Nuit Clásica - Armaf</li>
+    </ul>
+    <a href="#" class="btn">Visítanos y siente la diferencia</a>
+    <p class="contact">
+      Para más información, <br> 
+      <a href="https://wa.me/50431857596" target="_blank">¡Escríbenos por WhatsApp!</a>
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const items = document.querySelectorAll(".products li");
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = 1;
+          item.style.transform = "translateY(0)";
+        }, index * 500);
+      });
+    });
+  </script>
+</body>
+</html>
